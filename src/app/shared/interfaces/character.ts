@@ -4,13 +4,15 @@ export interface CharacterModel {
     status:string,
     species:string,
     type?: string,
+    dimension?: string,
     gender:string,
-    origin: OriginModel[],
-    location: LocationModel[],
+    origin: OriginModel,
+    location: LocationModel,
     image:string,
-    episode: any,
+    episode: Array<any>,
     url:string,
-    created: Date
+    residents?:Array<any>,
+    created?:string
 }
 export interface OriginModel{
     name:string,

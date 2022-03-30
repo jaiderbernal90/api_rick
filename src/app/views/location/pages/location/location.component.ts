@@ -31,9 +31,9 @@ export class LocationComponent implements OnInit {
 
   getLocation(id:number){
     let path = `${this.url}location/${id}`;
-        this.dataSvc.getRequest(path).subscribe((res:any) => {
-            this.location = res;
-        })
+    this.dataSvc.getRequest(path).subscribe((res:any) => {
+        this.location = res;
+    })
   }
 
   getLengthResidents(arr:any){

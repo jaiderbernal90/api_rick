@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { LocationComponent } from './location.component';
+import { RouterTestingModule } from "@angular/router/testing";
 
 describe('LocationComponent', () => {
   let component: LocationComponent;
@@ -8,7 +9,12 @@ describe('LocationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LocationComponent ]
+      imports:[
+        HttpClientTestingModule,
+        RouterTestingModule
+      ],
+      declarations: [ LocationComponent ],
+
     })
     .compileComponents();
   });
@@ -22,4 +28,6 @@ describe('LocationComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  
 });

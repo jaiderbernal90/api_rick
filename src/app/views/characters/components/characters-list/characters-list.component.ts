@@ -12,17 +12,20 @@ import { DataService } from 'src/app/shared/services/data.service';
 })
 export class CharactersListComponent implements OnInit,AfterContentInit {
   @Input() public character:CharacterModel;
-  episode:Observable<string>; 
+  episode:string = ''; 
+
   constructor(
     private dataSvc:DataService,
     private router:Router,
   ) { }
 
   ngAfterContentInit(): void {
-    this.searchEpisode(this.character.episode[0]);
+    // this.searchEpisode(this.character.episode[0]);
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.searchEpisode(this.character?.episode[0]);
+  }
 
   searchEpisode(episode:string):any{
     this.dataSvc.getRequest(episode).subscribe((res:any) => {     

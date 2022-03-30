@@ -1,17 +1,17 @@
 <div class="card">
-    <a class="card__header" [routerLink]="['detalle', character.id]">
-        <img [src]="character.image" alt="">
+    <a class="card__header" [routerLink]="['detalle', character?.id]">
+        <img [src]="character?.image" alt="">
     </a>
     <div class="card__body">
         <div class="card__body-info">
-            <span class="card__body-info--person">{{character.species}}</span>
-            <span class="card__body-info--status">{{character.status}}</span>
+            <span class="card__body-info--person">{{character?.species}}</span>
+            <span class="card__body-info--status">{{character?.status}}</span>
         </div>
-        <h3 class="card__body-title">{{character.name}}</h3>
+        <h3 class="card__body-title">{{character?.name}}</h3>
         <div class="card__body-about">
-            <div class="card__body-item" (click)="goToLocation(character.location['url'])">
+            <div class="card__body-item" (click)="goToLocation(character?.location['url'])">
                 <i class="card__body-item--icon fa-solid fa-location-dot"></i>
-               <span class="card__body-item--text">{{character.location['name']}}</span> 
+               <span class="card__body-item--text">{{character?.location['name']}}</span> 
             </div>
             <div class="card__body-item">
                 <i class="card__body-item--icon fa-solid fa-video"></i>
