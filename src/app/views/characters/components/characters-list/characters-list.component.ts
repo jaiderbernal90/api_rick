@@ -1,4 +1,5 @@
 import { AfterContentInit, ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { CharacterModel } from 'src/app/shared/interfaces/character';
 import { DataService } from 'src/app/shared/services/data.service';
@@ -13,7 +14,8 @@ export class CharactersListComponent implements OnInit,AfterContentInit {
   @Input() public character:CharacterModel;
   episode:Observable<string>; 
   constructor(
-    private dataSvc:DataService
+    private dataSvc:DataService,
+    private router:Router,
   ) { }
 
   ngAfterContentInit(): void {
@@ -28,4 +30,8 @@ export class CharactersListComponent implements OnInit,AfterContentInit {
     })
   }
     
+  goToLocation(url:string) {
+    let id = url.split('/').reverse()[0];
+    this.router.navigate(['/', 'ubicaciones', 'detalle', id])
+  }
 }

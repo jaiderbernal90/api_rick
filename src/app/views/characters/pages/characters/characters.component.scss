@@ -24,3 +24,18 @@
         }
     }
 }
+
+@media screen and (max-width:768px) {
+    .grid__cards{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .paginators__actions{
+        margin-top: 16px;
+    }
+}   
+
+@media screen and (max-width:425px) {
+    .grid__cards{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}   

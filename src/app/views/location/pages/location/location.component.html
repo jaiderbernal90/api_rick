@@ -1,0 +1,23 @@
+<!-- <h2 class="title__principaly">Personaje</h2> -->
+<!-- <div class="content__image">
+    <img [src]="location?.name" alt="">
+</div> -->
+ <div class="flex center">
+    <div class="flex-item">
+        <h2 class="name__location">{{location?.name}}</h2>
+    </div>
+</div>
+<div class="grid__info">
+    <div class="grid__info-item">
+        <span>{{location?.type}}</span>
+        <small class="grid__info-item--small">Tipo</small>
+    </div>
+    <div class="grid__info-item">
+        <span>{{location?.dimension}}</span>
+        <small class="grid__info-item--small">Dimensión</small>
+    </div>
+    <div class="grid__info-item">
+        <span>{{ getLengthResidents(location?.residents)}}</span>
+        <small class="grid__info-item--small">Número residentes</small>
+    </div>
+</div>

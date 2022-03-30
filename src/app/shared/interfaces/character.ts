@@ -18,5 +18,8 @@ export interface OriginModel{
 }
 export interface LocationModel{
     name:string,
-    url:string
+    url:string,
+    dimension?:string,
+    residents?:string,
+    type?:string
 }

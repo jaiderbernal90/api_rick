@@ -1,7 +1,7 @@
 <div class="card">
-    <div class="card__header">
+    <a class="card__header" [routerLink]="['detalle', character.id]">
         <img [src]="character.image" alt="">
-    </div>
+    </a>
     <div class="card__body">
         <div class="card__body-info">
             <span class="card__body-info--person">{{character.species}}</span>
@@ -9,7 +9,7 @@
         </div>
         <h3 class="card__body-title">{{character.name}}</h3>
         <div class="card__body-about">
-            <div class="card__body-item">
+            <div class="card__body-item" (click)="goToLocation(character.location['url'])">
                 <i class="card__body-item--icon fa-solid fa-location-dot"></i>
                <span class="card__body-item--text">{{character.location['name']}}</span> 
             </div>

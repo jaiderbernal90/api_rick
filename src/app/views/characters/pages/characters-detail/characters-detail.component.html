@@ -1,0 +1,42 @@
+<!-- <h2 class="title__principaly">Personaje</h2> -->
+    <div class="content__image">
+        <img [src]="character?.image" alt="">
+    </div>
+    <div class="flex center">
+        <div class="flex-item">
+            <h2 class="name__character">{{character?.name}}</h2>
+        </div>
+    </div>
+<div class="grid__info">
+    <div class="grid__info-item">
+        <span>{{character?.status}}</span>
+        <small class="grid__info-item--small">Estado</small>
+    </div>
+    <div class="grid__info-item">
+        <span>{{character?.species}}</span>
+        <small class="grid__info-item--small">Especie</small>
+    </div>
+    <div class="grid__info-item">
+        <span>{{character?.gender}}</span>
+        <small class="grid__info-item--small">Genero</small>
+    </div>
+    <div class="grid__info-item">
+        <span>{{character?.origin['name']}}</span>
+        <small class="grid__info-item--small">Origen</small>
+    </div>
+    <div class="grid__info-item">
+        <span (click)="goToLocation(character?.location['url'])" class="cursor-pointer" >{{character?.location['name']}}</span>
+        <small class="grid__info-item--small">Ubicación</small>
+    </div>
+</div>
+
+<div class="content__episodes">
+    <h4 class="content__episodes-title">Episodios</h4>
+    <div class="content__episodes-items">
+        <ng-container *ngFor="let item of episodes">
+            <div class="content__episodes-item">
+                {{ item }}.
+            </div>
+        </ng-container>
+    </div>
+</div>
