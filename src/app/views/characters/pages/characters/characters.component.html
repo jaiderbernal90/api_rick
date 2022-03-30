@@ -1,0 +1,13 @@
+
+<h2 class="title__principaly">Personajes</h2>
+<div class="grid__cards">
+    <ng-container *ngFor="let item of characters">
+        <app-characters-list [character]="item" ></app-characters-list>
+    </ng-container>
+</div>
+<div class="paginators__actions">
+    <button [disabled]="prev === null" class="btn btn-light" (click)="paginate('prev')">Anterior</button>
+    <button [disabled]="next === null" class="btn btn-light"
+      (click)="paginate('next')">Siguiente</button>
+  </div>
+

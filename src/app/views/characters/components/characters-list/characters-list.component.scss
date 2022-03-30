@@ -1,0 +1,97 @@
+.card{
+    margin: auto;
+    width: 310px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &:hover .card__header  {
+        transform: translateY(-10px);
+    } 
+}
+.card__header{
+    box-shadow: 0px 0px 27px rgba(0, 0, 0, 0.05);
+    width: 85%;
+    height: 270px;
+    transform: translateY(0);
+    transition: transform .5s;
+    transition-delay: .2s;
+    cursor: pointer;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 5px 5px 0px 0px;
+        filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, .1));
+        transition: transform .5s ease-out;
+    }
+}
+.card__body{
+    background: #fff;
+    box-shadow: 0px 0px 27px rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    width: 100%;
+    position: relative;
+    padding: 20px 24px 24px;
+    transition: background .5s ease-in-out;
+    &::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 4px;
+        width: 100%;
+        background: #80FF00;
+        border-radius: 5px 5px 0px 0px;
+        transition: background .5s ease-in-out;
+    }
+    .card__body-info{
+        display: flex;
+        justify-content: space-between;
+        font-weight: 600;
+        font-size: .8rem;
+        line-height: 18px;
+        .card__body-info--person{
+            color: #ccc;
+        }
+    }
+    .card__body-title{
+        font-weight: 700;
+        font-size: 1.5rem;
+        line-height: 36px;
+        margin-top: 4px;
+    }
+    .card__body-about{
+        margin-top: 12px;
+        display: flex;
+        flex-direction: column;
+        // justify-content: space-evenly;
+        gap: 12px;
+        .card__body-item{
+            width: 100%;
+            display: flex;
+            // &:last-child{
+            //     width: 40%;
+            // }
+            .card__body-item--text{
+                font-weight: 600;
+                font-size: .8rem;
+                text-align: left;
+                cursor: pointer;
+            }
+            .card__body-item--icon{
+                color: #ccc;
+                margin-right: 8px;
+                font-size: 1rem;
+            }
+        }
+    }
+    &:hover{
+        background: #121418;
+        box-shadow: 0px 0px 27px rgba(255, 255, 255, 0.05);
+        color: #fff;
+        &::after{
+            background: #FAF76B;
+        }
+    }
+}
